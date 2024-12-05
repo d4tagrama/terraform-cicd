@@ -14,12 +14,12 @@ pipeline {
                 branch 'dev'
             }
             steps {
-
+                sh 'echo "Generate Out File"'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Build'
+                sh 'echo "Test'
             }
         }
     }
