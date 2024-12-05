@@ -1,6 +1,15 @@
+# Env files
+.env
+# Exclude VSCode container configuration
+.devcontainer/
+
+# Explude .lock file
+.terraform.lock.hcl
 # Local .terraform directories
 **/.terraform/*
-
+# Custom
+quickstart-tutorials/
+README.md
 # .tfstate files
 *.tfstate
 *.tfstate.*
