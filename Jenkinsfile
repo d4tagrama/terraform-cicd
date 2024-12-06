@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Build'
+                sh 'echo "Build"'
             }
         }
         stage('Generate Out File'){
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo "Test'
+                sh 'echo "Test"'
             }
         }
     }
