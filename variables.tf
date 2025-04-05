@@ -13,5 +13,6 @@ variable "instance_ami_selection" {
   default = "aws-default"
 }
 variable instance_type {
+  type = string
   default = "t3.micro"
 }
