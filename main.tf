@@ -7,7 +7,7 @@ terraform {
   }
   cloud { 
     
-    organization = "D4tagram" 
+    organization = "D4tagrama" 
 
     workspaces { 
       name = "Prod" 
