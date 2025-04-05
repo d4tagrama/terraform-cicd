@@ -5,6 +5,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+  cloud { 
+    
+    organization = "D4tagram" 
+
+    workspaces { 
+      name = "Prod" 
+    } 
+  }
 }
 
 # Configure the AWS Provider
