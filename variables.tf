@@ -8,7 +8,7 @@ variable "ports_allowed" {}
 variable "instance_ami" {
   type = map(string)
 }
-variable instance_ami_selection {
+variable "instance_ami_selection" {
   type = string
   default = "aws-default"
 }
