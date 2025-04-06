@@ -50,7 +50,7 @@ jobs:
       run: terraform plan -input=false -out=prod-plan.out -var-file="prod.tfvars"
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v2
+      uses: aws-actions/configure-aws-credentials@v4
       with:
          role-to-assume: arn:aws:iam::666232013757:role/GithubActionS3
          aws-region: us-east-1
