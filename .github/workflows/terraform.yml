@@ -56,7 +56,7 @@ jobs:
          aws-region: us-east-1
     - name: Save Terraform Plan
       run: |
-        aws s3 ./prod-plan.out s3://terraform-d4tagrama
+        aws s3 cp ./prod-plan.out s3://terraform-d4tagrama
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
