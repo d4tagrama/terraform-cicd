@@ -2,7 +2,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
+[![Terraform](https://github.com/d4tagrama/terraform-cicd/actions/workflows/terraform.yml/badge.svg)](https://github.com/d4tagrama/terraform-cicd/actions/workflows/terraform.yml)
 
 ### Built With
 
