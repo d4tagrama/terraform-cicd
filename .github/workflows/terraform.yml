@@ -54,6 +54,8 @@ jobs:
       with:
          role-to-assume: arn:aws:iam::666232013757:role/GitOCID
          aws-region: us-east-1
+    - name: Switch Role
+      run: aws sts assume-role --role-arn arn:aws:iam::666232013757:role/S3UploadRole --role-session-name uploadsession
     - name: Save Terraform Plan
       run: |
         aws s3 cp ./prod-plan.out s3://terraform-d4tagrama
