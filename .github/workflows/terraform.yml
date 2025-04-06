@@ -52,13 +52,12 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-         role-to-assume: arn:aws:iam::666232013757:role/GitOCID
+         role-to-assume: ${{ secrets.AWS_STS_ROLE }}
          aws-region: us-east-1
-    - name: Switch Role
-      run: aws sts assume-role --role-arn arn:aws:iam::666232013757:role/S3UploadRole --role-session-name uploadsession
     - name: Save Terraform Plan
       run: |
-        aws s3 cp ./prod-plan.out s3://terraform-d4tagrama
+        CURRENT_DATE=$(date +"%Y-%m-%d-%H%M") 
+        aws s3 cp ./prod-plan.out s3://${{ secrets.AWS_BUCKET }}/prod-plan-${CURRENT_DATE}.out
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
