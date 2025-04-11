@@ -63,3 +63,23 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false -var-file="prod.tfvars"
+      
+  terraform-sast:
+    name: 'Terraform SAST'
+    needs: terraform
+    runs-on: ubuntu-latest
+    environment: production
+    steps: 
+    - name: Configure Checkov
+      uses: actions/checkout@v2
+      
+    - name: Set Up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
+    - name: Prepar Checkov Scan
+      uses: bridgecrewio/checkov-action@master
+      
+    - name: Run Checkov scan  
+      run: checkov -d .
+      
