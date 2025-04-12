@@ -82,4 +82,4 @@ jobs:
       run: pip install --upgrade checkov
       
     - name: Run Checkov scan
-      run: checkov -d . --config-file /dev/null --skip-check CKV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41 
+      run: checkov -d . --skip-check CKV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41 
