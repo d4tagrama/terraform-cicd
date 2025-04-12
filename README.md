@@ -16,15 +16,14 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started 
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This is an example of IaC with terraform using:
 
-### Prerequisites
+1. variables & locals
+2. data
+3. tfvars
+4. backend (this is disabled)
 
-This is an proyect is base on standard Terraform configuration.
+We created a Github Action to validate and perform SAST checks with [Checkov](https://www.checkov.io/).
 
-Initialize Terraform configuration Link: [Terraform init](https://developer.hashicorp.com/terraform/tutorials/cli/init)
-
-### Installation
-
-...
+> [!WARNING]  
+> We skip multiple Checkov's checks: KV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41

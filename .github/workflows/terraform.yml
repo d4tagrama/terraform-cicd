@@ -70,16 +70,20 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps: 
+    #This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
     - name: Configure Checkov
       uses: actions/checkout@v2
-      
+    
+      # Installing a version of Python
     - name: Set Up Python 3.8
       uses: actions/setup-python@v4
       with:
         python-version: 3.8
 
+    # Upgrade Checkov
     - name: Install Checkov
       run: pip install --upgrade checkov
-      
+    
+    # Run Checkov
     - name: Run Checkov scan
       run: checkov -d . --skip-check CKV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41 
