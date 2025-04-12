@@ -80,5 +80,5 @@ jobs:
     - name: Prepar Checkov Scan
       uses: bridgecrewio/checkov-action@master
       with:
-        args: --skip-check CKV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41
+        args: --config-file /dev/null --skip-check CKV_AWS_135,CKV_AWS_79,CKV_AWS_126,CKV_AWS_8,CKV_AWS_382,CKV_AWS_23,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_5,CKV2_AWS_41
       
